@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">  
+  <PropertyGroup>
+    <TargetFrameworks>net5.0-windows</TargetFrameworks>
+	<OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <StartupObject>TestCefSharpWpf.Program</StartupObject>
+    <Platforms>x86;x64;arm64</Platforms>
+
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)'=='' and '$(Platform)'=='arm64'">win-arm64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)'=='' and '$(Platform)'=='x64'">win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)'=='' and '$(Platform)'=='x86'">win-x86</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CefSharp.Common.NETCore" Version="94.4.20" />
+    <PackageReference Include="CefSharp.Wpf.HwndHost" Version="93.1.140" />
+  </ItemGroup>
+</Project>
